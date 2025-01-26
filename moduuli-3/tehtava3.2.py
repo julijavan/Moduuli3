@@ -7,3 +7,5 @@ elif luokka == "B":
     print("B on ikkunaton hytti autokannen yläpuolella.")
 elif luokka == "C":
     print("C on ikkunaton hytti autokannen alapuolella.")
+if luokka != "LUX, A, B, C":
+    print("Virheellinen hyttiluokka.")
