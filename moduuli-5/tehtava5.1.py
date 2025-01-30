@@ -1,7 +1,9 @@
 import random
 
-def roll(amount):
-    summa = 0
-    for i in range(amount):
-        summa += random.randint(1, 6)  # Heitetään yksi noppa (1-6)
-    return summa
+nopat = int(input("Anna noppien lukumäärä: "))
+summa = 0
+for i in range(nopat):
+    noppa = random.randint(1, 6)
+    summa += noppa
+print("Silmälukujen summa: ")
+print(summa)
