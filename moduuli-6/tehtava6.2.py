@@ -7,7 +7,7 @@ def main():
     try:
         tahkot = int(input("Anna nopan tahkojen määrä: "))
         if tahkot < 1:
-            print("Tahkojen määrän tulee olla positiivinen kokonaisluku.")
+            print("Nopan tahkojen määrän tulee olla positiivinen kokonaisluku.")
             return
 
         while True:
@@ -17,3 +17,4 @@ def main():
                 break
     except ValueError:
         print("Syötteen tulee olla kokonaisluku.")
+main()
