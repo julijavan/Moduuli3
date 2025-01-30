@@ -9,3 +9,4 @@ def main():
         print(f"Heiton tulos: {silmaluku}")
         if silmaluku == 6:
             break
+main()
