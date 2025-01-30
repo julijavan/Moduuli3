@@ -12,8 +12,7 @@ while number_str != "":
         smallest = luku
     if luku > biggest:
         biggest = luku
-
-    input("Give another number. ")
+    number_str = input("Give another number. ")
 
 print(f"The largest number you entered was {biggest}")
 print(f"The smallest number you entered was {smallest}")
