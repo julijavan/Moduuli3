@@ -1,3 +1,4 @@
+import math
 def laske_yksikkohinta(halk, hinta):
     """
     :Laskee pizzan yksikköhinnan euroina per neliömetri.
