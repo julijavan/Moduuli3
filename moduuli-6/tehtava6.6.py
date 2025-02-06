@@ -12,11 +12,6 @@ def laske_yksikkohinta(halk, hinta):
 
 # Pääohjelma
 def main():
-    alkuperainen_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    karsittu_lista = poista_parittomat(alkuperainen_lista)
-
-    print("Alkuperäinen lista:", alkuperainen_lista)
-    print("Karsittu lista:", karsittu_lista)
 
     halk1 = float(input("Anna ensimmäisen pizzan halkaisija (cm): "))
     hinta1 = float(input("Anna ensimmäisen pizzan hinta (€): "))
@@ -33,3 +28,4 @@ def main():
         print("Ensimmäinen pizza antaa paremman vastineen rahalle.")
     else:
         print("Toinen pizza antaa paremman vastineen rahalle.")
+main()
