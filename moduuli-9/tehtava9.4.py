@@ -34,4 +34,4 @@ while not winnerfound:
 
 autot.sort(key=lambda a: a.matka)
 for auto in autot:
-           print(f'{auto.rtunnus}, {auto.huippunopeus}', {auto.nopeus}, {auto.matka})
+    print(f'{auto.rtunnus}, {auto.huippunopeus}', {auto.nopeus}, {auto.matka})
