@@ -7,9 +7,15 @@ class Auto:
         self.kuljettu = kuljettu
 
     def accelerate(self, nopeus):
-        if self.nopeus <= 0
-            break:
-        else self.nopeus += 50
-            self.nopeus += 30
+        self.nopeus.append(30)
+        self.nopeus.append(70)
+        self.nopeus.append(50)
+        self.nopeus.remove(200)
 
+        if self.nopeus > self.huippunopeus:
+            self.nopeus = self.huippunopeus
+        elif self.nopeus < 0:
+            self.nopeus = 0
+
+        auto = Auto(rtunnus="ABC-123", huippunopeus=142, current=0, nopeus=0, kuljettu=0)
         print(f"Your current speed is {self.nopeus}")
