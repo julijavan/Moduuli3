@@ -1,21 +1,3 @@
-#Kirjoita Hissi-luokka, joka saa alustajaparametreinaan alimman
-# ja ylimmän kerroksen numeron.
-
-# Hissillä on metodit siirry_kerrokseen, kerros_ylös ja kerros_alas.
-# Uusi hissi on aina alimmassa kerroksessa.
-
-# Jos teet luodulle hissille h esimerkiksi metodikutsun h.siirry_kerrokseen(5),
-# metodi kutsuu joko kerros_ylös- tai kerros_alas-metodia
-# niin monta kertaa, että hissi päätyy viidenteen kerrokseen.
-
-# Viimeksi mainitut metodit ajavat hissiä yhden kerroksen ylös-
-# tai alaspäin ja ilmoittavat,
-# missä kerroksessa hissi sen jälkeen on.
-
-# Testaa luokkaa siten, että teet pääohjelmassa hissin
-# ja käsket sen siirtymään haluamaasi kerrokseen
-# ja sen jälkeen takaisin alimpaan kerrokseen.
-
 class Hissi:
     def __init__(self, alin_kerros, ylin_kerros):
         self.alin_kerros = alin_kerros
@@ -47,8 +29,32 @@ class Hissi:
             self.kerros_alas()
 
 
-# Pääohjelma
+class Talo:
+    def __init__(self, alin_kerros, ylin_kerros, hissien_lkm):
+        self.alin_kerros = alin_kerros
+        self.hissit = [Hissi(alin_kerros, ylin_kerros) for _ in range(hissien_lkm)]
+
+    def aja_hissia(self, hissin_numero, kohdekerros):
+        if 0 <= hissin_numero < len(self.hissit):
+            print(f"\nAjetaan hissiä {hissin_numero} kerrokseen {kohdekerros}")
+            self.hissit[hissin_numero].siirry_kerrokseen(kohdekerros)
+        else:
+            print("Virheellinen hissin numero")
+
+    def palohälytys(self):
+        print("\nPalohälytys! Kaikki hissit pohjakerrokseen.")
+        for i, hissi in enumerate(self.hissit):
+            print(f"\nHissi {i}:")
+            hissi.siirry_kerrokseen(self.alin_kerros)
+
+    # Pääohjelma
 if __name__ == "__main__":
-    h = Hissi(1, 10)  # Hissi kerrosten 1 ja 10 välillä
-    h.siirry_kerrokseen(7)
-    h.siirry_kerrokseen(1)
+    talo = Talo(1, 10, 3)  # Talo, jossa 3 hissiä kerrosten 1-10 välillä
+
+    # Ajetaan jokaista hissiä eri kerrokseen
+    talo.aja_hissia(0, 5)
+    talo.aja_hissia(1, 8)
+    talo.aja_hissia(2, 3)
+
+    # Palohälytys - kaikki hissit palaavat alimpaan kerrokseen
+    talo.palohälytys()

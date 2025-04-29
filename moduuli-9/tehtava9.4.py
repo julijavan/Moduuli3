@@ -1,6 +1,5 @@
 import random
 
-
 class Auto:
     def __init__(self, rtunnus, huippunopeus):
         self.rtunnus = rtunnus
@@ -15,7 +14,7 @@ class Auto:
         elif self.nopeus < 0:
             self.nopeus = 0
 
-    def kuljettu(self, aika):
+    def kulje(self, aika):
         self.matka += aika * self.nopeus
 
 autot = []
@@ -28,7 +27,7 @@ winnerfound = False
 while not winnerfound:
     for auto in autot:
         auto.accelerate(random.randint(-10, 15))
-        auto.kuljettu(1)
+        auto.kulje(1)
         if auto.matka >= 10000:
             winnerfound = True
 
