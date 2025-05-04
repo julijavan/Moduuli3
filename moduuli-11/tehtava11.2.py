@@ -22,7 +22,7 @@ class Auto:
 class Sähköauto(Auto):
     def __init__(self, rtunnus, huippunopeus, akkukapasiteetti):
         super().__init__(rtunnus, huippunopeus)
-        self.akkukapasiteetti = akkukapasiteetti  # kilowattitunteina (kWh)
+        self.akkukapasiteetti = akkukapasiteetti
 
     def __str__(self):
         return f"Sähköauto {self.rtunnus} (huippunopeus: {self.huippunopeus} km/h, akku: {self.akkukapasiteetti} kWh)"
@@ -31,7 +31,7 @@ class Sähköauto(Auto):
 class Polttomoottoriauto(Auto):
     def __init__(self, rtunnus, huippunopeus, tankin_koko):
         super().__init__(rtunnus, huippunopeus)
-        self.tankin_koko = tankin_koko  # litroina (l)
+        self.tankin_koko = tankin_koko
 
     def __str__(self):
         return f"Polttomoottoriauto {self.rtunnus} (huippunopeus: {self.huippunopeus} km/h, tankki: {self.tankin_koko} l)"
@@ -40,7 +40,7 @@ class Polttomoottoriauto(Auto):
 class Kilpailu:
     def __init__(self, nimi, pituus, autolista):
         self.nimi = nimi
-        self.pituus = pituus  # kilometreinä
+        self.pituus = pituus
         self.autot = autolista
         self.tunnit = 0
 
@@ -55,7 +55,6 @@ class Kilpailu:
         print(f"{'Rekisteritunnus':<15}{'Huippunopeus':<15}{'Nopeus':<15}{'Kuljettu matka':<15}{'Maalissa':<10}")
         print("-" * 70)
 
-        # Järjestetään autot matkan mukaan laskevaan järjestykseen
         jarjestetyt_autot = sorted(self.autot, key=lambda a: a.matka, reverse=True)
 
         for auto in jarjestetyt_autot:
@@ -68,8 +67,6 @@ class Kilpailu:
                 return True
         return False
 
-
-# Pääohjelma Kilpailu-luokkaa varten
 def kilpailu_main():
     # Luodaan autolista
     autot = []
@@ -77,18 +74,14 @@ def kilpailu_main():
         huippunopeus = random.randint(100, 200)
         autot.append(Auto(f'ABC-{i + 1}', huippunopeus))
 
-    # Luodaan kilpailu
     kilpailu = Kilpailu("Suuri romuralli", 8000, autot)
 
-    # Simuloidaan kilpailun etenemistä
     while not kilpailu.kilpailu_ohi():
         kilpailu.tunti_kuluu()
 
-        # Tulostetaan tilanne 10 tunnin välein
         if kilpailu.tunnit % 10 == 0:
             kilpailu.tulosta_tilanne()
 
-    # Tulostetaan lopputilanne kilpailun päätyttyä
     print("\nKILPAILU PÄÄTTYNYT!")
     kilpailu.tulosta_tilanne()
 
@@ -108,8 +101,8 @@ def main():
     print(polttomoottoriauto)
     print()
 
-    sahkoauto.accelerate(120)  # Asetetaan sähköauton nopeudeksi 120 km/h
-    polttomoottoriauto.accelerate(100)  # Asetetaan polttomoottoriauton nopeudeksi 100 km/h
+    sahkoauto.accelerate(120)
+    polttomoottoriauto.accelerate(100)
 
     print("Autojen nopeudet:")
     print(f"{sahkoauto.rtunnus}: nopeus {sahkoauto.nopeus} km/h")
