@@ -47,14 +47,11 @@ class Talo:
             print(f"\nHissi {i}:")
             hissi.siirry_kerrokseen(self.alin_kerros)
 
-    # Pääohjelma
 if __name__ == "__main__":
-    talo = Talo(1, 10, 3)  # Talo, jossa 3 hissiä kerrosten 1-10 välillä
+    talo = Talo(1, 10, 3)
 
-    # Ajetaan jokaista hissiä eri kerrokseen
     talo.aja_hissia(0, 5)
     talo.aja_hissia(1, 8)
     talo.aja_hissia(2, 3)
 
-    # Palohälytys - kaikki hissit palaavat alimpaan kerrokseen
     talo.palohälytys()
