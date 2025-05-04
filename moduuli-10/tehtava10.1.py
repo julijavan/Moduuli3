@@ -47,8 +47,7 @@ class Hissi:
             self.kerros_alas()
 
 
-# Pääohjelma
 if __name__ == "__main__":
-    h = Hissi(1, 10)  # Hissi kerrosten 1 ja 10 välillä
+    h = Hissi(1, 10)
     h.siirry_kerrokseen(7)
     h.siirry_kerrokseen(1)
