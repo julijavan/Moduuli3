@@ -29,7 +29,6 @@ if __name__ == "__main__":
     lehti = Lehti("Aku Ankka", "Aki Hyyppä")
     kirja = Kirja("Hytti n:o 6", "Rosa Liksom", 200)
 
-    # Tulosta molempien julkaisujen tiedot
     print("\nLehden tiedot:")
     lehti.tulosta_tiedot()
 
