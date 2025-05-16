@@ -1,27 +1,19 @@
-const readline = require('readline');
+'use strict';
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+let nums = []
 
-let numbers = [];
 
-function askNumber() {
-    rl.question("Anna numero: ", (input) => {
-        let num = parseFloat(input);
+while (true){
+   const num = parseInt(prompt("Please enter numbers, or enter a number you have already submitted to quit."))
 
-        if (numbers.includes(num)) {
-            console.log(`Numero ${num} on syötetty jo. Lopetan kyselyn.`);
-            numbers.sort((a, b) => a - b);
-            console.log("Numerosi:");
-            console.log(numbers);
-            rl.close();
-        } else {
-            numbers.push(num);
-            askNumber();
-        }
-    });
+   if (nums.includes(num)) break; {
+      nums.push(num)
+  }
 }
 
-askNumber();
+alert("You have already submitted that number, please check the console to see the numbers you entered.")
+nums.sort((a,b) => a-b)
+
+for (let i = 0; i < nums.length; i++) {
+  console.log(nums[i])
+}

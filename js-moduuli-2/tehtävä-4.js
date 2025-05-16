@@ -1,26 +1,17 @@
-const readline = require('readline');
+'use strict';
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+let nub = 1
+let num_lst = []
 
-let numbers = [];
 
-function askNumber() {
-    rl.question("Syötä numero! 0 päättää kyselyn: ", (input) => {
-        let num = parseFloat(input);
-
-        if (num === 0) {
-            numbers.sort((a, b) => b - a); // Sort descending
-            console.log("Numerosi suurimmasta pienimpään:");
-            console.log(numbers);
-            rl.close();
-        } else {
-            numbers.push(num);
-            askNumber(); // Keep asking
-        }
-    });
+while (nub !== 0) {
+  nub = parseInt(prompt("Please enter numbers, or enter a 0 to quit."))
+  num_lst.push(nub)
 }
 
-askNumber();
+num_lst.sort((b,a) => b-a);
+num_lst.reverse()
+
+for (let i = 0; i <num_lst.length; i++ ) {
+  console.log(num_lst[i])
+}
