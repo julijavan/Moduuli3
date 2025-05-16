@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let dogs = [];
+
+        for (let i = 0; i < 6; i++) {
+            let name = prompt(`Kerro koiran ${i + 1} nimi:`);
+            dogs.push(name);
+        }
+
+        dogs.sort().reverse();
+
+        let ul = document.createElement('ul');
+        dogs.forEach(name => {
+            let li = document.createElement('li');
+            li.textContent = name;
+            ul.appendChild(li);
+        });
+
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>
